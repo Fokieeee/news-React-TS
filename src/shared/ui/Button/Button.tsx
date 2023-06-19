@@ -4,7 +4,7 @@ import { ButtonHTMLAttributes, FC } from "react"
 
 export enum ThemeButton {
   CLEAR = "clear",
-  BORDERED = 'bordered'
+  BORDERED = "bordered"
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -13,19 +13,20 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button: FC<ButtonProps> = (props) => {
-  const {
-    className,
-    children,
-    theme = ThemeButton.CLEAR,
-    ...otherProps
-  } = props
+	const {
+		className,
+		children,
+		theme = ThemeButton.CLEAR,
+		...otherProps
+	} = props
 
-  return (
-    <button
-      className={classNames(cls.Button, {}, [className, cls[theme]])}
-      {...otherProps}
-    >
-      {children}
-    </button>
-  )
+	return (
+		<button
+			type="button"
+			className={classNames(cls.Button, {}, [className, cls[theme]])}
+			{...otherProps}
+		>
+			{children}
+		</button>
+	)
 }

@@ -5,21 +5,21 @@ const defaultTheme =
   (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT
 
 export const ThemeProvider:FC = ({children}) => {
-  const [theme, setTheme] = useState<Theme>(defaultTheme)
+	const [theme, setTheme] = useState<Theme>(defaultTheme)
 
-  const defaultProps = useMemo(
-    () => ({
-      theme: theme,
-      setTheme: setTheme,
-    }),
-    [theme]
-  )
+	const defaultProps = useMemo(
+		() => ({
+			theme: theme,
+			setTheme: setTheme,
+		}),
+		[theme]
+	)
 
-  return (
-    <div>
-      <ThemeContext.Provider value={defaultProps}>
-        {children}
-      </ThemeContext.Provider>
-    </div>
-  )
+	return (
+		<div>
+			<ThemeContext.Provider value={defaultProps}>
+				{children}
+			</ThemeContext.Provider>
+		</div>
+	)
 }
