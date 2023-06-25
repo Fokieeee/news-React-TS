@@ -37,5 +37,6 @@ module.exports = {
 		"import/prefer-default-export": "off",
 		"i18next/no-literal-string": [1, { markupOnly: true }],
 		"max-len": ["error", { ignoreComments: true, tabWidth: 2 }],
+		"@typescript-eslint/ban-ts-comment": 1,
 	},
 }
