@@ -32,11 +32,28 @@ module.exports = {
 		quotes: ["error", "double"],
 		semi: ["error", "never"],
 		"react/react-in-jsx-scope": "off",
-		"react/jsx-filename-extension": [2, { extensions: [".ts", ".tsx"] }],
+		"react/jsx-filename-extension": [
+			2,
+			{
+				extensions: [".ts", ".tsx"],
+			},
+		],
 		"import/no-unresolved": "off",
 		"import/prefer-default-export": "off",
-		"i18next/no-literal-string": [1, { markupOnly: true }],
-		"max-len": ["error", { ignoreComments: true, tabWidth: 2 }],
+		"i18next/no-literal-string": [
+			1,
+			{
+				markupOnly: true,
+				ignoreAttribute: ["data-testid", "to"],
+			},
+		],
+		"max-len": [
+			"error",
+			{
+				ignoreComments: true,
+				tabWidth: 2,
+			},
+		],
 		"@typescript-eslint/ban-ts-comment": 1,
 	},
 }
